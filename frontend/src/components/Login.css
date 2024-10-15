@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lato:wght@300;400;700&display=swap');
+
+:root {
+  --content-max-width: 1200px;
+  --content-padding: 2rem;
+  --primary-color: #4a90e2;
+  --background-color: #f0f0f0;
+  --text-color: #333333;
+  --secondary-text-color: #666666;
+  --feature-background: #e0e0e0;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
+.login-container {
+  display: flex;
+  max-width: var(--content-max-width);
+  margin: 180px auto 4rem; /* Increased top margin to prevent merging with header */
+  background-color: var(--background-color);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(74, 144, 226, 0.1);
+  overflow: hidden;
+  position: relative; /* Added to ensure proper stacking context */
+  z-index: 1; /* Ensure it's above any background elements but below the header */
+}
+
+.login-section {
+  width: 50%;
+  padding: 4rem 3rem; /* Increased padding for better spacing */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-content {
+  max-width: 350px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hospital-section {
+  background-color: var(--feature-background);
+}
+
+.patient-section {
+  background-color: var(--background-color);
+}
+
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 1.5rem 0;
+  line-height: 1.2;
+}
+
+p {
+  color: var(--secondary-text-color);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.login-button-n {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.login-button-n:hover {
+  background-color: #3a7bc8;
+}
+
+.login-button-n.patient {
+  background-color: white;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.login-button-n.patient:hover {
+  background-color: var(--feature-background);
+}
+
+.signup-text {
+  text-align: center;
+}
+
+.signup-text p {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.signup-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.signup-links a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.signup-links a:hover {
+  color: #3a7bc8;
+  text-decoration: underline;
+}
+
+.divider {
+  color: var(--secondary-text-color);
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+    margin: 100px 1rem 2rem; /* Adjusted top margin for mobile */
+  }
+  .login-section {
+    width: 100%;
+    padding: 3rem 2rem; /* Adjusted padding for mobile */
+  }
+}
+
+/* Floating background elements */
+.login-section::before,
+.login-section::after {
+  content: '';
+  position: absolute;
+  background-color: rgba(74, 144, 226, 0.1);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.login-section::before {
+  top: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+}
+
+.login-section::after {
+  bottom: -30px;
+  left: -30px;
+  width: 100px;
+  height: 100px;
+}
